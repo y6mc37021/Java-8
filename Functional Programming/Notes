@@ -1,0 +1,101 @@
+1.	What is a Lambda Expression?
+	Lambda expression is an anonymous function that takes in parameters and returns a value. It is called an anonymous function because it doesn't require a name.
+	
+	Lambda lets us to define functions which doesn't belong to any class. These functions can be treaded as values i.e., "Functions as Values". 
+	
+	Example Of Inline Values: 
+	String name = "Functional Programming"; 
+	double amount = 35.89;
+	char c = 'c';
+	
+	Here the right hand part is the inline value which we call it as data and it can be assigned to variables in java. This is exactly what Lambda allows us to do, we can assign a block of code to a variable like how we use to assign data to variables. So we can write a regular java method and it can be assigned to variable. So where ever this variable goes the piece of code goes with it. 
+	
+	blockofCode = {
+		----;
+		----;
+	}	
+	
+2.	Understanding Syntax:
+
+	Traditional Java Method Syntax
+	
+	accessmodifer returntype methodname(input arguments){
+		return _________;
+	}
+
+	Example of simple Java method 
+	
+	public int add(int a, int b){
+		return a+b;
+	}
+
+	Lets now Convert add() to a Lambda Expression with the following steps. 
+	
+	Step 1: Like mentioned above first lets assign the add() to a variable. 
+	
+	addition = public int add(int a, int b){
+		return a+b;
+	}
+	
+	Step 2: In Java when we define a variable(ex : char c = 'c';) and assign a value to it than we use that variable data by referring to its name. Similarly we use the method names to call them where we required which means that they act like a variable. If we look at above code we have assigned the block of code to variable called "addition" so we don't need use another to define the same block of code i.e., "add".
+	Lets remove "add" from above declaration and this is how it looks after that.  
+	
+	addition = public int (int a, int b){
+		return a+b;
+	}
+	
+	Step 3: Java compilers were made smart enough to understand the return types with the introductions of Lambda expression. That means while looking at the code compiler itself understands the return type of block of code/method. So that means we don't we have to define the return type of the method any more when we are using Lambda's. That means this is how the code looks like after   
+	
+	
+	addition = public (int a, int b){
+		return a+b;
+	}
+	
+	
+	Step 4: Access modifiers like public, private, protected etc make more sense when we define the methods/function in a class but if we think of case where functions are defined in isolation or anonymous. Than access modifiers don't make much sense as that function/method is accessible to everyone who every has that variable. So lets see how the code looks like.   
+	
+	addition = (int a, int b){
+		return a+b;
+	}
+	
+	So these are the only things are required to define a lambda expression
+	
+	variable name = () {
+	}
+	
+	And the only addition to this syntax is -> symbol in between () and {. So the final syntax of a lambda expression is 
+	
+	variable name = () -> {
+	
+	}
+	
+	
+Note :
+1. 	If method is just one line of code example : return a+b; than we remove the curly brackets and after that lambda expression looks like this. 
+	variable name = () -> return a+b;
+	And this is only if we have one line of code and if we multiple lines of code than we still need curly brackets.
+
+2.	If method is just one line of code we can also remove 'return' key word. Actually using 'return' key word with out curly brackets({}) invalid. 	
+	variable name = () -> a+b;
+	
+	
+Example of a few Lambda Expression :
+
+	addFunction = (int a, int b)-> a+b;
+	subFunction = (int a, int b) -> a-b;
+	stringLength = (String s) -> s.length();
+	
+	Below is a small example of lambda Expression that return 0 if denominator is zero else division. 
+	divideFunction = (int a, int b) -> {
+	if(b==0) return 0;
+	return a/b;
+	
+	 	
+	
+	
+		
+
+
+	
+	
+
