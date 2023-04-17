@@ -3,6 +3,7 @@ package functional.programming.lambda.expression.exercises;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
 
 import functional.programming.lambda.expression.Person;
 
@@ -35,7 +36,7 @@ public class Exercise_1_Java_8 {
 		
 	}		
 	
-	public static void printOnCondition(List<Person> person, Condition condition) {
+	public static void printOnCondition(List<Person> person, Predicate<Person> condition) {
 		
 		for(Person p : person) {
 			if(condition.test(p)) {
@@ -45,6 +46,3 @@ public class Exercise_1_Java_8 {
 	}
 }
 
-interface Condition{
-	public boolean test(Person p);
-}
