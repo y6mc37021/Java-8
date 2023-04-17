@@ -5,30 +5,25 @@ public class Greeter {
 	public static void main(String[] args) {
 		
 		Greeter wish = new Greeter();
-		ImplementHello hello = new ImplementHello();
-		wish.greet(hello);
-		
-		MyLambda firstLambda = ()->System.out.println("hello World");
-		Myaddition addFunction = (int a, int b) -> a + b;
+		Hello helloLambda = () -> System.out.println("hello helloLambda ");
+
+		Hello innterClass = new Hello(){
+			@Override
+			public void sayHello() {
+				System.out.println("hello Inner Class ");
+			}
+			
+		};
+		//innterClass.sayHello();
+		wish.greet(helloLambda);
+		wish.greet(innterClass);
 		
 	}
 	
 	public void greet(Hello hello) {
-		
 		hello.sayHello();
 	}
 
 }
 
 
-
-
-interface MyLambda {
-	void foo();
-}
-
-
-
-interface Myaddition {
-	int add(int a, int b);
-}
