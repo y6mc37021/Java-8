@@ -1,4 +1,4 @@
-package functional.programming.lambda.expression.exercises;
+package functional.programming.lambda.expression.exercises_2;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -36,13 +36,12 @@ public class Exercise_1_Java_8 {
 		
 	}		
 	
-	public static void printOnCondition(List<Person> person, Predicate<Person> condition) {
+	public static void printOnCondition(List<Person> person, Predicate<Person> predicate) {
 		
 		for(Person p : person) {
-			if(condition.test(p)) {
+			if(predicate.test(p)) {
 				System.out.println(p);
 			}	
 		}
 	}
 }
-

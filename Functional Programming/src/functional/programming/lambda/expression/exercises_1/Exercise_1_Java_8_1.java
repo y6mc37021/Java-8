@@ -1,4 +1,4 @@
-package functional.programming.lambda.expression.exercises;
+package functional.programming.lambda.expression.exercises_1;
 
 import java.util.Arrays;
 import java.util.Collections;
