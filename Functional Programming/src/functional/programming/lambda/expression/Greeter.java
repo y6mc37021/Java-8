@@ -16,6 +16,7 @@ public class Greeter {
 		};
 		//innterClass.sayHello();
 		wish.greet(helloLambda);
+		wish.greet(() -> System.out.println("hello helloLambda "));
 		wish.greet(innterClass);
 		
 	}
