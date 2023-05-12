@@ -13,6 +13,13 @@ public class BinarySearch {
             System.out.println("\nKey not found in given list!");  
         else 
             System.out.println("\nKey is found at location: "+result + " in the list"+" Element = "+arry[6]); 
+		System.out.println("--------");
+		
+		int tt = binarySearchRess(arry, key, low, high);
+		if(tt==1)
+			System.out.println("\nKey not found in given list!!!!!!!!!!");  
+	    else 
+	    	System.out.println("\nKey is found at location::::::: "+result + " in the list"+" Element = "+arry[6]);
 	}
 	
 	public static void binarySearch(int[] arr, int target, int low, int high) {
@@ -77,4 +84,40 @@ public class BinarySearch {
 		}
 		return -1;
 	}
+	
+	public static int binarySearchRess(int[] arr, int l, int r, int t) {
+		
+		if(l<=r) {
+			int mid=l+(r-1)/2;
+			if(arr[mid]==t)
+				return 1;
+			if(arr[mid]>t)
+				return binarySearchRess(arr, l, mid-1,t);
+			return binarySearchRess(arr, mid+1, r,t);
+		}
+		return -1;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
