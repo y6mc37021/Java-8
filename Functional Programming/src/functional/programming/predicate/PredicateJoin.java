@@ -28,12 +28,49 @@ public class PredicateJoin {
 		System.out.print("\nNot Even Numbers And Less Than 5 In The Array are :");
 		printP(p1.or(p2),number);
 		
+		System.out.print("\nNames That Start With K Are :");
+		printP2();
+		
 	}
 	
 	public static void printP(Predicate<Integer> p, int[] ar ) {
 		for(int a : ar) {
-			if(p.test(a))
-			System.out.print(" "+a);
+			if(p.test(a)) {
+				System.out.print(" "+a);
+			}	
 		}	
 	}
+	
+	public static void printP2() {
+		String[] st = {"Ravi","Arun", "Kalyan", "Kumar", "Yash", "Bob", "Kiran", "Kotlin" };
+		Predicate<String> startsWith = s->s.charAt(0)=='K';
+		for(String s : st) {
+			if(startsWith.test(s))
+				System.out.print(" "+s);
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
