@@ -22,6 +22,11 @@ public class PredicateBasic {
 		System.out.println(p4.test(aa1));
 		List<String> aa2= List.of();
 		System.out.println(p4.test(aa2));
+		
+		System.out.println("\n----Predicate isEquals----");
+		Predicate<String> p5 = Predicate.isEqual("Hello");
+		System.out.println(p5.test("Hello"));
+		System.out.println(p5.test("test"));
 	}
 	
 }

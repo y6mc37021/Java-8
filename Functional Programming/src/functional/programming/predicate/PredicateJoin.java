@@ -1,5 +1,6 @@
 package functional.programming.predicate;
 
+import java.util.ArrayList;
 import java.util.function.Predicate;
 
 public class PredicateJoin {
@@ -29,8 +30,9 @@ public class PredicateJoin {
 		printP(p1.or(p2),number);
 		
 		System.out.print("\nNames That Start With K Are :");
-		printP2();
+		stringContains();
 		
+		removeEmptyorNull();
 	}
 	
 	public static void printP(Predicate<Integer> p, int[] ar ) {
@@ -41,13 +43,29 @@ public class PredicateJoin {
 		}	
 	}
 	
-	public static void printP2() {
+	public static void stringContains() {
 		String[] st = {"Ravi","Arun", "Kalyan", "Kumar", "Yash", "Bob", "Kiran", "Kotlin" };
 		Predicate<String> startsWith = s->s.charAt(0)=='K';
 		for(String s : st) {
 			if(startsWith.test(s))
 				System.out.print(" "+s);
 		}
+	}
+	
+	public static void removeEmptyorNull() {
+		String[] st = {"Ravi","Arun", "Kalyan", "", "Kumar", "Yash","", "Bob", "Kiran", null,  "Kotlin" };
+		ArrayList<String> ar = new ArrayList<String>();
+		System.out.println("\n Printing String...");
+		Predicate<String> p = t->(t != null && t.length()!=0); 
+		for(String s:st) {
+			if(p.test(s)) {
+				System.out.println(s);
+				ar.add(s);
+			}	
+		}
+		
+		System.out.println("New Array List is :: "+ar);
+		
 	}
 }
 
