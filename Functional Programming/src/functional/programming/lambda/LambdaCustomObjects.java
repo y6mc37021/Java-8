@@ -1,8 +1,10 @@
-package functional.programming.lambda.expression.exercises_6;
+package functional.programming.lambda;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import functional.programming.lambda.expression.exercises_6.Employee;
 
 public class LambdaCustomObjects {
 	

@@ -1,4 +1,4 @@
-package functional.programming.lambda.expression.exercises_6;
+package functional.programming.lambda;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -77,12 +77,15 @@ public class LambdaExpressionPratice {
 		m.put(5, "Five");
 		m.put(6, "Six");
 		m.put(2, "Two");
+		System.out.println("- Nature Sorting ::- "+m);
+		
 		for (Map.Entry<Integer, String> entry : m.entrySet()) {
 			Integer key = entry.getKey();
 			String val = entry.getValue();
 			System.out.println(key +"-"+ val );
 			
 		}
+		
 		System.out.println("-- Different Way --");
 		TreeMap<Integer, String> map = new TreeMap<>((o1,o2)->(o2>o1)?1:(o1>o2)?-1:0);
 		map.put(10, "Ten");
